@@ -1,0 +1,10 @@
+lib/
+local/
+bin/
+*.db
+*~
+*.pyc
+ersatzpg/
+word_pop/
+include/
+*.gz
