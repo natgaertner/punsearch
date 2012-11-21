@@ -8,7 +8,6 @@ import psycopg2
 from psycopg2.extensions import QuotedString
 from stop_words import stop_words
 app = Flask(__name__)
-app.secret_key = '\xe9\x83\x88v\x97\x16\xe1\x06r\xa3+\xd0W\xfb\xea\xa4L\x06LW\xe0\xca\xff\x8a'
 words = gdbm.open('/home/nat/code/punsearch/words.db')
 rhymes = gdbm.open('/home/nat/code/punsearch/rhymes.db')
 #words = gdbm.open('/home/gaertner/code/punsearch/words.db')
