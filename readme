@@ -1,0 +1,16 @@
+http://www.punsearch.com
+Why search for what you thought you were looking for? Punsearch will turn it into a dad joke. 
+Thanks to Mike Jensen for obtaining the punsearch domain and providing hosting and moral support.
+There are two underlying databases that make punsearch work that are not stored on github:
+the rhymes:
+http://rhyme.sourceforge.net/
+and the word popularity (a significantly reduced version of):
+http://books.google.com/ngrams/datasets
+word popularity is inserted into a postgres database indexed on words. This is fast enough for now. Rhymes are pulled using gdbm as that is the format the rhyming dictionary comes in. Maybe someday punsearch will get enough traffic for speed to matter here.
+Rhymes are chosen by weighted random selection. When a list of rhymes is being considered, the probability of a rhyme being chosen is (number of occurrences of rhyme in word popularity)/sum(occurrences of each rhyme being considered)
+This may weight some popular choices a little too much. This very complex algorithm is still being tweaked.
+Some basic words (articles, short prepositions) are not considered for rhyming and are passed through unchanged. Thanks to Steve Ritter for this suggestion.
+The number of words that are replaced with a rhyme is randomly chosen uniformly between 1 and the number of non-stop words in the query.
+TODO:
+Create an advanced version that gives the user some control over random seeding and the number of words to rhyme.
+Match on parts of speech?

@@ -8,4 +8,4 @@ ersatzpg/
 word_pop/
 include/
 *.gz
-static/
+static
