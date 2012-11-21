@@ -89,7 +89,7 @@ def main():
         if len(idx_no_stop) > 0:
             num_rhymes = random.randint(1,len(idx_no_stop))
             print num_rhymes
-            random.shuffle(idx)
+            random.shuffle(idx_no_stop)
             for n in idx_no_stop[:num_rhymes]:
                 query[n] = get_rhyme(query[n])
         return redirect('https://www.google.com/search?q={query}'.format(query='+'.join(query)))
